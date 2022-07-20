@@ -146,7 +146,6 @@ public class MainActivity extends Activity {
 ```
 ##### 1.3.4 【建议】setSavePassword 方法调用
 建议 setSavePassword 的设置为 false ，避免明文保存网站密码。
-建议禁止使用 File 域协议，以避免过滤不当导致敏感信息泄露。
 ```java
 public class MainActivity extends Activity {
 
@@ -293,7 +292,7 @@ Mybatis
 
 ##### 1.1.2【必须】白名单过滤
 
-对于表名、列名等无法进行预编译的场景，比如外部数据拼接到order by, group by语句中，需通过白名单的形式对数据进行校验，例如判断传入列名是否存在、升降序仅允许输入“ASC”和“DESC”、表明列名仅允许输入字符、数字、下划线等。参考示例：
+对于表名、列名等无法进行预编译的场景，比如外部数据拼接到order by, group by语句中，需通过白名单的形式对数据进行校验，例如判断传入列名是否存在、升降序仅允许输入“ASC”和“DESC”、表名列名仅允许输入字符、数字、下划线等。参考示例：
 
 ```java
 public String someMethod(boolean sortOrder) {
@@ -474,7 +473,7 @@ reader.setFeature("http://xml.org/sax/features/external-parameter-entities", fal
 | 输出点在URL属性中                                            | 对这些数据进行URL编码<br/>Tips：除此之外，所有链接类属性应该校验其协议。禁止JavaScript、data和Vb伪协议。 |
 
 
-以上编码规则相对较为繁琐，可参考或直接使用业界已有成熟第三方库如ESAPI.其提供一下函数对象上表中的编码规则:
+以上编码规则相对较为繁琐，可参考或直接使用业界已有成熟第三方库如ESAPI.其提供以下函数对象上表中的编码规则:
 
 ```java
 ESAPI.encoder().encodeForHTML();
